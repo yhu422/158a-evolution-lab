@@ -38,7 +38,7 @@ def change_engine(receive_port=3000, send_port=3000):
 def mutation_engine(lst=[]):
     mutated_options_list = []
     for i in range(10):
-        mutated_options_list += mod_list(lst)
+        mutated_options_list += [mod_list(lst)]
     return mutated_options_list
 
 def mod_list(lst=[]):
