@@ -15,13 +15,11 @@ def change_engine(receive_port=3000, send_port=3000):
     change_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     change_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     change_socket.bind((LOCALHOST, receive_port))
-    
     # Retrieves data, organizes it into list
     max_data = change_socket.recv(2048).decode('utf-8')
     max_data_stripped = max_data.partition("\x00")[0];
     max_data_list = list(map(int, max_data_stripped.split(' ')))
     #print("converted: ", max_data_list, "\n")
-
     # Mutation Engine (Organism) Variant
     if (receive_port == ORGANISM_RECEIVE_PORT):
         print("Mutation (Organism) Engine")
@@ -58,7 +56,7 @@ def mod_list(lst=[]):
 def natural_selection_engine(environment):
     organisms = change_engine(ORGANISM_RECEIVE_PORT, ORGANISM_SEND_PORT)
     best_fit = organisms[0]
-    best_heuristic = Fitness.fitness(environment, organism)
+    best_heuristic = Fitness.fitness(environment, best_fit)
     for organism in organisms:
         heuristic = Fitness.fitness(environment, organism)
         if heuristic < best_heuristic:
@@ -69,7 +67,5 @@ def natural_selection_engine(environment):
 
 if __name__ == "__main__":
     while True:
-        print("TRUE: env_list")
         env_list = change_engine(ENVIRONMENT_RECEIVE_PORT,ENVIRONMENT_SEND_PORT)
-        print("TRUE: natural_selection_engine")
         natural_selection_engine(env_list)
