@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
+			"minor" : 5,
 			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 106.0, 1332.0, 968.0 ],
+		"rect" : [ 127.0, 100.0, 1332.0, 743.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,30 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-125",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1527.0, 901.0, 150.0, 74.0 ],
+					"text" : "Organism:\nRepresented by a melodic line. This is the \"best fit\" organism returned by our python script"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1054.0, 908.0, 150.0, 60.0 ],
+					"text" : "Environment: Represented by chords that change every four timestep"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"bubbleside" : 3,
 					"fontname" : "Arial",
@@ -64,7 +88,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1563.0, 121.963684000000001, 292.0, 40.0 ],
-					"presentation_linecount" : 2,
 					"text" : "Begins the process of triggering python code for both engines"
 				}
 
@@ -92,10 +115,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.259124040603638, 1028.355754613876343, 196.0, 1133.0 ],
+					"patching_rect" : [ 15.259124040603638, 1028.355754613876343, 201.0, 1133.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 19,
-					"presentation_rect" : [ 223.583374000000049, 98.0, 800.0, 346.0 ],
+					"presentation_rect" : [ 223.583374000000049, 98.0, 802.0, 346.0 ],
 					"text" : "Welcome to our evolution project. Some parts of this patcher are still under construction and will be further expanded upon for the Final, but we have reached a good first version that we wanted to share with you today.\n\nIn our project, there are two elements: an Environment and an Organism. The Environment is represented as a chord of four notes played simultaneously over four seconds. The Organism is an individual note that changes every second. The goal of the Organism is to best fit within our changing Environment. It does so by evolving its sound over time to better match that of the Environment.\n\nIn this Version 1, we have implemented the engines necessary to compute our best fit, evolve our environment and organism in Python, and represent them as sounds in Max. To learn more details about our design and upcoming plans, visit our design document: https://docs.google.com/document/d/1VVob7BSaJZseKMCKP2JbH11TMgE01bcrZ_xXVMl5ot0/edit?usp=sharing\n\nTo begin, run the python code in EvolutionEngine.py\nIf using Visual Studio Code, open EvolutionEngine.py and press the play button in the top right corner. Finally, press the blue button at the top left of this Max patch.\n\nTo end, place your cursor in the terminal and (on Mac) press Control + C. Then, press the red button to the left."
 				}
 
@@ -928,7 +951,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 5,
 							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -974,7 +997,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 281.0, 691.0, 276.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Send that updated list to Python to be modified"
 								}
 
@@ -1018,7 +1040,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 670.0, 263.0, 292.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Sends those values as a list to the patcher to be played"
 								}
 
@@ -1909,7 +1930,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
+							"minor" : 5,
 							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1969,7 +1990,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 285.5, 691.0, 292.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Send that updated list to Python to be modified"
 								}
 
@@ -1999,7 +2019,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 660.0, 263.0, 292.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Sends those values as a list to the patcher to be played"
 								}
 
