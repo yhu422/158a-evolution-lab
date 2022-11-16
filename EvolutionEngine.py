@@ -19,7 +19,6 @@ def change_engine(receive_port=3000, send_port=3000):
     max_data = change_socket.recv(2048).decode('utf-8')
     max_data_stripped = max_data.partition("\x00")[0];
     max_data_list = list(map(int, max_data_stripped.split(' ')))
-    #print("converted: ", max_data_list, "\n")
     # Mutation Engine (Organism) Variant
     if (receive_port == ORGANISM_RECEIVE_PORT):
         print("Mutation (Organism) Engine")
@@ -46,11 +45,9 @@ def mod_list(lst=[]):
     # And modifies the last 4 elements +/- 3
     shift_list = lst[SHIFT:]
     shift_list = shift_list + [int(val + 3) if random.randint(0,1) == 1 else int(val - 3) for val in shift_list[len(shift_list)-SHIFT:]]
-    #print("shift: ", shift_list, "\n")
 
     # Again modifies the entire list by +/- 5
     modified_list = [int(val + 5) if random.randint(0,1) == 1 else int(val - 5) for val in shift_list]
-    #print("modified: ", modified_list, "\n")
     return modified_list
 
 def natural_selection_engine(environment):
